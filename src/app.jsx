@@ -6,10 +6,13 @@ import DayService from "./pages/DayService";
 import Pricing from "./pages/Pricing";
 import Access from "./pages/Access";
 import Contact from "./pages/Contact";
+import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/facility/multifunction" element={<Multifunction />} />
