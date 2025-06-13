@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold">老人ホーム</Link>
+        <Link to="/" className="text-xl font-bold">ケアサービスつきみ</Link>
         <ul className="flex space-x-6">
           {navigation.map((item) => (
             <li key={item.name}>

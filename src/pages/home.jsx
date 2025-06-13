@@ -40,7 +40,7 @@ const Home = () => {
       className="container py-6 space-y-12"
     >
       {/* スライドショー（Swiperを使用） */}
-      <div className="max-w-4xl mx-auto">
+      <div className="w-[1000px] mx-auto">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={30}
@@ -52,18 +52,18 @@ const Home = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true
           }}
-          className="h-[400px]"
+          style={{ width: '1100px', height: '550px' }}
         >
           <SwiperSlide>
             <img 
-              src="/images/facility-001.jpg" 
+              src="/images/facility-010.jpg" 
               alt="slide1" 
               className="rounded-lg"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img 
-              src="/images/facility-002.jpg" 
+              src="/images/gaikan-2.jpg" 
               alt="slide2" 
               className="rounded-lg"
             />
@@ -124,7 +124,7 @@ const Home = () => {
               <h3 className="text-lg font-bold mb-4">グループホームねずがせき</h3>
               <div className="w-full h-48 mb-4 relative">
                 <img
-                  src="/images/grouphome-035.jpg"
+                  src="/images/facility-003.jpg"
                   alt="グループホーム"
                   className="w-full h-full object-cover rounded cursor-pointer"
                   onClick={() => handleImageClick("/images/grouphome-035.jpg")}
@@ -146,7 +146,7 @@ const Home = () => {
               <h3 className="text-lg font-bold mb-4">多機能ねずがせき</h3>
               <div className="w-full h-48 mb-4 relative">
                 <img
-                  src="/images/takinoo-037.jpg"
+                  src="/images/takinoo-031.jpg"
                   alt="多機能"
                   className="w-full h-full object-cover rounded cursor-pointer"
                   onClick={() => handleImageClick("/images/takinoo-037.jpg")}
@@ -184,6 +184,7 @@ const Home = () => {
         >
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-lg font-bold mb-4">お問合わせ</h2>
+            <img src="/images/caremanager.png" alt="施設" className="mx-auto mb-4 h-24 w-auto" />
             <p className="cursor-pointer" onClick={handleContactClick}>000-0000-0000 10:00~17:00</p>
             <Link to="/Contact" className="text-blue-600 underline hover:text-blue-800">詳細はこちら</Link>
           </div>
