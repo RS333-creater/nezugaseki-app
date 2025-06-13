@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
 
+const navigation = [
+  { name: '多機能ホーム', href: '/facility/multifunction' },
+  { name: 'デイサービス', href: '/facility/day-service' },
+  { name: '料金案内', href: '/pricing' },
+  { name: 'アクセス', href: '/access' },
+  { name: 'お問い合わせ', href: '/contact' },
+];
+
 const Navbar = () => {
   return (
     <nav className="bg-blue-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-xl font-bold">老人ホーム</Link>
         <ul className="flex space-x-6">
-          <li><Link to="/facility/multifunction">多機能ホーム</Link></li>
-          <li><Link to="/facility/day-service">デイサービス</Link></li>
-          <li><Link to="/pricing">料金案内</Link></li>
-          <li><Link to="/access">アクセス</Link></li>
-          <li><Link to="/contact">お問い合わせ</Link></li>
+          {navigation.map((item) => (
+            <li key={item.name}>
+              <Link to={item.href}>{item.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
