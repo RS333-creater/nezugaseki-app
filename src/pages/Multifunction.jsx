@@ -32,7 +32,7 @@ const Multifunction = () => {
         >
           <SwiperSlide>
             <img 
-              src="/images/takinoo-037.jpg" 
+              src="/images/takinoo-034.jpg" 
               alt="slide1" 
               className="rounded-lg w-full h-full object-cover"
             />
@@ -46,7 +46,7 @@ const Multifunction = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img 
-              src="/images/takinoo-002.jpg" 
+              src="/images/takinoo-025.jpg" 
               alt="slide3" 
               className="rounded-lg w-full h-full object-cover"
             />
@@ -91,7 +91,7 @@ const Multifunction = () => {
         >
           <SwiperSlide>
             <img 
-              src="/images/takinoo-004.jpg" 
+              src="/images/takinoo-026.jpg" 
               alt="event1" 
               className="rounded-lg w-full h-full object-cover"
             />

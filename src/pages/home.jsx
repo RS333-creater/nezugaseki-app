@@ -116,79 +116,96 @@ const Home = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {/* グループホーム */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded shadow p-4"
-          >
-            <div className="text-center">
-              <h3 className="text-lg font-bold mb-4">グループホームねずがせき</h3>
-              <div className="w-full h-48 mb-4 relative">
-                <img
-                  src="/images/facility-003.jpg"
-                  alt="グループホーム"
-                  className="w-full h-full object-cover rounded cursor-pointer"
-                  onClick={() => handleImageClick("/images/grouphome-035.jpg")}
-                />
+          <Link to="facility/day-service" onClick={() => window.scrollTo(0, 0)}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-white rounded shadow p-4 cursor-pointer"
+            >
+              <div className="text-center">
+                <h3 className="text-lg font-bold mb-4">グループホームねずがせき</h3>
+                <div className="w-full h-48 mb-4 relative">
+                  <img
+                    src="/images/facility-003.jpg"
+                    alt="グループホーム"
+                    className="w-full h-full object-cover rounded cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleImageClick("/images/grouphome-035.jpg");
+                    }}
+                  />
+                </div>
+                <p className="mb-4">
+                  地域密着型サービスとして利用者様を24時間体制で支えながら、安定した生活と本人の望む生活を実現できるように尽力いたします！
+                </p>
+                <p className="text-blue-600 underline hover:text-blue-800">詳細はこちら</p>
               </div>
-              <p className="mb-4">
-                地域密着型サービスとして利用者様を24時間体制で支えながら、安定した生活と本人の望む生活を実現できるように尽力いたします！
-              </p>
-              <Link to="facility/day-service" className="text-blue-600 underline hover:text-blue-800">詳細はこちら</Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
 
           {/* 多機能ねずがせき */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded shadow p-4"
-          >
-            <div className="text-center">
-              <h3 className="text-lg font-bold mb-4">多機能ねずがせき</h3>
-              <div className="w-full h-48 mb-4 relative">
-                <img
-                  src="/images/takinoo-031.jpg"
-                  alt="多機能"
-                  className="w-full h-full object-cover rounded cursor-pointer"
-                  onClick={() => handleImageClick("/images/takinoo-037.jpg")}
-                />
+          <Link to="/facility/multifunction" onClick={() => window.scrollTo(0, 0)}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-white rounded shadow p-4 cursor-pointer"
+            >
+              <div className="text-center">
+                <h3 className="text-lg font-bold mb-4">多機能ねずがせき</h3>
+                <div className="w-full h-48 mb-4 relative">
+                  <img
+                    src="/images/takinoo-031.jpg"
+                    alt="多機能"
+                    className="w-full h-full object-cover rounded cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleImageClick("/images/takinoo-037.jpg");
+                    }}
+                  />
+                </div>
+                <p className="mb-4">
+                  デイサービスを中心に訪問介護やショートステイを組み合わせ、在宅での生活の支援や、機能訓練を行っております！
+                </p>
+                <p className="text-blue-600 underline hover:text-blue-800">詳細はこちら</p>
               </div>
-              <p className="mb-4">
-                デイサービスを中心に訪問介護やショートステイを組み合わせ、在宅での生活の支援や、機能訓練を行っております！
-              </p>
-              <Link to="/facility/multifunction" className="text-blue-600 underline hover:text-blue-800">詳細はこちら</Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
         </div>
       </div>
 
       {/* ご利用案内 */}
       <div className="max-w-2xl mx-auto px-4">
-        <motion.section
-          whileHover={{ scale: 1.02 }}
-          className="bg-blue-100 p-6 rounded shadow"
-        >
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-lg font-bold mb-4">ご利用案内</h2>
-            <img src="/images/介護施設.png" alt="施設" className="mx-auto mb-4 h-24 w-auto" />
-            <p className="mb-4">ご相談からご利用までの流れ</p>
-            <Link to="/Pricing" className="text-blue-700 underline hover:text-blue-900">ご利用方法について</Link>
-          </div>
-        </motion.section>
+        <Link to="/Pricing" onClick={() => window.scrollTo(0, 0)}>
+          <motion.section
+            whileHover={{ scale: 1.02 }}
+            className="bg-blue-100 p-6 rounded shadow cursor-pointer"
+          >
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-lg font-bold mb-4">ご利用案内</h2>
+              <img src="/images/介護施設.png" alt="施設" className="mx-auto mb-4 h-24 w-auto" />
+              <p className="mb-4">ご相談からご利用までの流れ</p>
+              <p className="text-blue-700 underline hover:text-blue-900">ご利用方法について</p>
+            </div>
+          </motion.section>
+        </Link>
       </div>
 
       {/* お問い合わせ */}
       <div className="max-w-2xl mx-auto px-4">
-        <motion.section
-          whileHover={{ scale: 1.02 }}
-          className="bg-gray-50 p-6 rounded shadow"
-        >
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-lg font-bold mb-4">お問合わせ</h2>
-            <img src="/images/caremanager.png" alt="施設" className="mx-auto mb-4 h-24 w-auto" />
-            <p className="cursor-pointer" onClick={handleContactClick}>000-0000-0000 10:00~17:00</p>
-            <Link to="/Contact" className="text-blue-600 underline hover:text-blue-800">詳細はこちら</Link>
-          </div>
-        </motion.section>
+        <Link to="/Contact" onClick={() => window.scrollTo(0, 0)}>
+          <motion.section
+            whileHover={{ scale: 1.02 }}
+            className="bg-gray-50 p-6 rounded shadow cursor-pointer"
+          >
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-lg font-bold mb-4">お問合わせ</h2>
+              <img src="/images/caremanager.png" alt="施設" className="mx-auto mb-4 h-24 w-auto" />
+              <p className="cursor-pointer" onClick={(e) => {
+                e.preventDefault();
+                handleContactClick();
+              }}>000-0000-0000 10:00~17:00</p>
+              <p className="text-blue-600 underline hover:text-blue-800">お問い合わせフォームへ</p>
+            </div>
+          </motion.section>
+        </Link>
       </div>
 
       {/* モーダル */}
