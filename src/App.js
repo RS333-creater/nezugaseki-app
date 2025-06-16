@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import Multifunction from "./pages/Multifunction.jsx";
-import DayService from "./pages/DayService.jsx";
-import Pricing from "./pages/Pricing.jsx";
-import Access from "./pages/Access.jsx";
-import Contact from "./pages/Contact.jsx";
-import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
+import Home from "./pages/Home.js";
+import Multifunction from "./pages/Multifunction.js";
+import DayService from "./pages/DayService.js";
+import Pricing from "./pages/Pricing.js";
+import Access from "./pages/Access.js";
+import Contact from "./pages/Contact.js";
+import Navbar from "./components/Navbar.js";
+import Footer from "./components/Footer.js";
 
 function App() {
   return (
