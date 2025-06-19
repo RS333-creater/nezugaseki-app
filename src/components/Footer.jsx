@@ -15,10 +15,20 @@ const Footer = () => {
           {/* 施設情報 */}
           <div>
             <h3 className="text-xl font-bold mb-4">ケアサービスつきみ</h3>
-            <p className="mb-2">〒000-0000</p>
-            <p className="mb-2">東京都○○区○○1-1-1</p>
-            <p className="mb-2">TEL: 03-0000-0000</p>
-            <p>FAX: 03-0000-0000</p>
+            <p className="mb-2">本社</p>
+            <p className="mb-2">〒998-0045</p>
+            <p className="mb-2">山形県酒田市二番町8-1</p>
+            <p className="mb-2">TEL: 0234-28-8585</p>
+            <p>FAX: 0234-21-0106</p>
+          </div>
+
+          {/* 施設情報 */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">グループホームねずがせき</h3>
+            <p className="mb-2">〒999-7126</p>
+            <p className="mb-2">山形県鶴岡市鼠ヶ関字横路9-3</p>
+            <p className="mb-2">TEL: 0234-48-4555</p>
+            <p>FAX: 0234-48-4556</p>
           </div>
 
           {/* リンク */}

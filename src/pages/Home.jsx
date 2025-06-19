@@ -201,7 +201,7 @@ const Home = () => {
               <p className="cursor-pointer" onClick={(e) => {
                 e.preventDefault();
                 handleContactClick();
-              }}>000-0000-0000 10:00~17:00</p>
+              }}>0234-28-8585 10:00~17:00</p>
               <p className="text-blue-600 underline hover:text-blue-800">お問い合わせフォームへ</p>
             </div>
           </motion.section>
