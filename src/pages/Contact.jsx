@@ -8,10 +8,22 @@ const Contact = () => {
     reset
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("送信データ:", data);
-    alert("お問い合わせありがとうございます！");
-    reset(); // フォームリセット
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (response.ok) {
+        alert("お問い合わせありがとうございます！");
+        reset();
+      } else {
+        alert("送信に失敗しました。");
+      }
+    } catch (error) {
+      alert("送信時にエラーが発生しました。");
+    }
   };
 
   return (
