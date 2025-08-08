@@ -117,13 +117,13 @@ const Pricing = () => {
                   <tr><th className="py-3 px-4 border-b font-semibold text-left">介護区分</th><th className="py-3 px-4 border-b font-semibold text-right">自己負担額</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td className="py-2 px-4 border-b">要支援1</td><td className="py-2 px-4 border-b text-right">3,438円</td></tr>
+                  <tr><td className="py-2 px-4 border-b">要支援1</td><td className="py-2 px-4 border-b text-right">3,450円</td></tr>
                   <tr><td className="py-2 px-4 border-b">要支援2</td><td className="py-2 px-4 border-b text-right">6,972円</td></tr>
                   <tr><td className="py-2 px-4 border-b">要介護1</td><td className="py-2 px-4 border-b text-right">10,458円</td></tr>
                   <tr><td className="py-2 px-4 border-b">要介護2</td><td className="py-2 px-4 border-b text-right">15,370円</td></tr>
-                  <tr><td className="py-2 px-4 border-b">要介護3</td><td className="py-2 px-4 border-b text-right">23,369円</td></tr>
-                  <tr><td className="py-2 px-4 border-b">要介護4</td><td className="py-2 px-4 border-b text-right">24,877円</td></tr>
-                  <tr><td className="py-2 px-4 border-b">要介護5</td><td className="py-2 px-4 border-b text-right">27,239円</td></tr>
+                  <tr><td className="py-2 px-4 border-b">要介護3</td><td className="py-2 px-4 border-b text-right">22,359円</td></tr>
+                  <tr><td className="py-2 px-4 border-b">要介護4</td><td className="py-2 px-4 border-b text-right">24,677円</td></tr>
+                  <tr><td className="py-2 px-4 border-b">要介護5</td><td className="py-2 px-4 border-b text-right">27,209円</td></tr>
                 </tbody>
               </table>
             </div>
@@ -159,7 +159,7 @@ const Pricing = () => {
               <tr><td className="py-2 px-4 border-b">宿泊費</td><td className="py-2 px-4 border-b text-right">1泊 1,700円</td></tr>
               <tr><td className="py-2 px-4 border-b">おむつ代・日常生活費</td><td className="py-2 px-4 border-b text-right">実費</td></tr>
               <tr><td className="py-2 px-4 border-b">通院介助費</td><td className="py-2 px-4 border-b text-right">1時間 2,000円</td></tr>
-              <tr><td className="py-2 px-4 border-b">行事費</td><td className="py-2 px-4 border-b text-right">1ヶ月 500円</td></tr>
+              {/* <tr><td className="py-2 px-4 border-b">行事費</td><td className="py-2 px-4 border-b text-right">1ヶ月 500円</td></tr> */}
             </tbody>
           </table>
         </div>
