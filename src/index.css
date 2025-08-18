@@ -48,3 +48,8 @@ img {
   height: auto;
   display: block; /* 余分な余白を防ぐため */
 }
+
+.swiper-container-responsive .swiper {
+  width: 100%;
+  aspect-ratio: 2 / 1; /* アスペクト比を 2:1 に指定 */
+}

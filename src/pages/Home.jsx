@@ -40,7 +40,7 @@ const Home = () => {
       className="container py-6 space-y-12"
     >
       {/* スライドショー（Swiperを使用） */}
-      <div className="w-[1000px] mx-auto">
+      <div className="w-full max-w-5xl mx-auto swiper-container-responsive">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={30}
@@ -52,7 +52,7 @@ const Home = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true
           }}
-          style={{ width: '1100px', height: '550px' }}
+          // style={{ width: '1100px', height: '550px' }}
         >
           <SwiperSlide>
             <img 
