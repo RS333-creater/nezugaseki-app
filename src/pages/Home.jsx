@@ -87,8 +87,7 @@ const Home = () => {
           <div className="text-center max-w-2xl mx-auto">
             <p className="text-lg leading-relaxed">
               弊社は地域密着型通所介護を展開しております。<br />
-              弊社には <span className="font-semibold text-blue-700">グループホームねずがせき</span>、そして
-              <span className="font-semibold text-blue-700">多機能ねずがせき</span> の二つの施設がございます。
+              弊社には <span className="font-semibold text-blue-700">グループホームねずがせき</span>がございます。
             </p>
           </div>
         </motion.section>
@@ -114,7 +113,8 @@ const Home = () => {
         <div className="text-center mb-6">
           <h2 className="text-xl font-bold">事業所紹介</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="flex justify-center"> 
+        <div className="max-w-md w-full">
           {/* グループホーム */}
           <Link to="facility/day-service" onClick={() => window.scrollTo(0, 0)}>
             <motion.div
@@ -141,33 +141,7 @@ const Home = () => {
               </div>
             </motion.div>
           </Link>
-
-          {/* 多機能ねずがせき */}
-          <Link to="/facility/multifunction" onClick={() => window.scrollTo(0, 0)}>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-white rounded shadow p-4 cursor-pointer"
-            >
-              <div className="text-center">
-                <h3 className="text-lg font-bold mb-4">多機能ねずがせき</h3>
-                <div className="w-full h-48 mb-4 relative">
-                  <img
-                    src="/images/takinoo-031.jpg"
-                    alt="多機能"
-                    className="w-full h-full object-cover rounded cursor-pointer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleImageClick("/images/takinoo-037.jpg");
-                    }}
-                  />
-                </div>
-                <p className="mb-4">
-                  デイサービスを中心に訪問介護やショートステイを組み合わせ、在宅での生活の支援や、機能訓練を行っております！
-                </p>
-                <p className="text-blue-600 underline hover:text-blue-800">詳細はこちら</p>
-              </div>
-            </motion.div>
-          </Link>
+        </div>
         </div>
       </div>
 

@@ -43,19 +43,6 @@ const Footer = () => {
               <li><Link to="/contact" onClick={scrollToTop}>お問い合わせ</Link></li>
             </ul>
           </div>
-
-          {/* SNSリンク */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">SNS</h3>
-            <div className="flex space-x-4">
-              <a href="https://twitter.com/careserviceTUKIMI" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-                Twitter
-              </a>
-              <a href="https://www.instagram.com/careserviceTUKIMI" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
-                Instagram
-              </a>
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
