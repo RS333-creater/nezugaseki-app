@@ -4,14 +4,19 @@
 
 body {
   margin: 0;
-  font-family: "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", MS PGothic, sans-serif;
+  font-family: "Inter", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-gray-50;
+  /* 背景色を深い紺色に固定 */
+  background-color: #082f49;
+  color: #f0f9ff;
+  overflow-x: hidden;
 }
 
 #root {
+  /* @apply を忘れずに追加 */
   @apply min-h-screen flex flex-col;
+  background-color: #082f49;
 }
 
 .container {
@@ -19,37 +24,18 @@ body {
   max-width: 1280px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Swiperの調整 */
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 0.5;
 }
-
-/* Swiper styles */
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.swiper-pagination-bullet-active {
+  background-color: #38bdf8 !important;
+  opacity: 1;
 }
 
 img {
   max-width: 100%;
   height: auto;
-  display: block; /* 余分な余白を防ぐため */
-}
-
-.swiper-container-responsive .swiper {
-  width: 100%;
-  aspect-ratio: 2 / 1; /* アスペクト比を 2:1 に指定 */
+  display: block;
 }

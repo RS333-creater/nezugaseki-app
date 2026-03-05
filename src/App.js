@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />
-        <main className="container mx-auto px-4 flex-grow">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/facility/day-service" element={<DayService />} />

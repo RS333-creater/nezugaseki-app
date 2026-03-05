@@ -1,12 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <footer className="bg-gray-800 text-white py-8">
@@ -43,13 +38,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} ケアサービスつきみ. All rights reserved.</p>
+        <div className="mt-12 text-center text-[10px] font-bold text-slate-700 uppercase tracking-widest">
+          &copy; 2026 Care Service TUKIMI.
         </div>
       </div>
     </footer>
   );
 };
-
-export default Footer; 
+export default Footer;
