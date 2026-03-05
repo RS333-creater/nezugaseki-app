@@ -1,83 +1,26 @@
 import React from "react";
+import OceanPage from "../components/OceanPage.jsx";
+import { motion } from "framer-motion";
 
 const Pricing = () => {
   return (
-    // レスポンシブ対応と読みやすさを考慮したスタイリング
-    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto font-sans bg-gray-50">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-gray-800">
-        料金のご案内
-      </h1>
-
-      {/* 料金構成の全体説明 */}
-      <div className="mb-10 p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-r-lg">
-        <h3 className="font-bold mb-1">料金の構成について</h3>
-        <p>
-          月々のご利用料金は、主に以下の2つの合計額となります。
-          <ul className="list-disc list-inside mt-2">
-            <li>
-              <strong>介護サービス費</strong>：介護保険適用分。要介護度や所得に応じた負担割合（1〜3割）で変動します。
-            </li>
-            <li>
-              <strong>その他の費用</strong>：介護保険適用外の費用。家賃や食費など全額自己負担となります。
-            </li>
+    <OceanPage
+      badge="料金の目安と構成"
+      title="料金のご案内"
+      description="介護サービス費（保険適用）と、その他費用（実費）の組み合わせでご案内します。"
+    >
+      <div className="max-w-6xl mx-auto space-y-16 pb-20">
+        {/* 全体説明：ダークグラス */}
+        <motion.div 
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          className="rounded-[2.5rem] bg-white/10 backdrop-blur-2xl p-8 sm:p-12 border border-white/20 shadow-2xl"
+        >
+          <h3 className="text-2xl font-black text-sky-400 mb-6 uppercase tracking-widest">Structure</h3>
+          <ul className="space-y-6 text-white text-lg font-bold">
+            <li className="flex gap-4"><span className="text-sky-400">01</span> 介護サービス費（1〜3割負担）</li>
+            <li className="flex gap-4"><span className="text-sky-400">02</span> その他の費用（実費：家賃・食費等）</li>
           </ul>
-        </p>
-      </div>
-
-      {/* --- グループホーム --- */}
-      <section className="mb-12">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 pb-2 border-b-2 border-gray-300 text-gray-700">
-          1. グループホームの料金
-        </h2>
-        <p className="mb-6 text-gray-600">
-          認知症の診断を受けた方が、家庭的な環境で共同生活を送るサービスです。料金は日額計算となり、1ヶ月分をまとめてお支払いいただきます。
-        </p>
-
-        <h3 className="text-lg font-medium mb-3 text-gray-700">(1) 介護サービス費（1日あたり）</h3>
-        
-        {/* 基本料金テーブル */}
-        <h4 className="font-semibold mb-2 text-gray-600">【基本料金】</h4>
-        <div className="overflow-x-auto shadow-md rounded-lg mb-6">
-          <table className="min-w-full bg-white text-center">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="py-3 px-4 border-b font-semibold">介護度</th>
-                <th className="py-3 px-4 border-b font-semibold">1割負担</th>
-                <th className="py-3 px-4 border-b font-semibold">2割負担</th>
-                <th className="py-3 px-4 border-b font-semibold">3割負担</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td className="py-2 px-4 border-b">要支援2</td><td className="py-2 px-4 border-b">749円</td><td className="py-2 px-4 border-b">1,498円</td><td className="py-2 px-4 border-b">2,247円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護1</td><td className="py-2 px-4 border-b">753円</td><td className="py-2 px-4 border-b">1,506円</td><td className="py-2 px-4 border-b">2,259円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護2</td><td className="py-2 px-4 border-b">788円</td><td className="py-2 px-4 border-b">1,576円</td><td className="py-2 px-4 border-b">2,364円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護3</td><td className="py-2 px-4 border-b">812円</td><td className="py-2 px-4 border-b">1,624円</td><td className="py-2 px-4 border-b">2,464円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護4</td><td className="py-2 px-4 border-b">828円</td><td className="py-2 px-4 border-b">1,656円</td><td className="py-2 px-4 border-b">2,484円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護5</td><td className="py-2 px-4 border-b">845円</td><td className="py-2 px-4 border-b">1,690円</td><td className="py-2 px-4 border-b">2,535円</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        {/* 加算料金テーブル */}
-        <h4 className="font-semibold mb-2 text-gray-600">【主な加算料金】</h4>
-        <div className="overflow-x-auto shadow-md rounded-lg">
-          <table className="min-w-full bg-white text-center">
-             <thead className="bg-gray-100">
-              <tr>
-                <th className="py-3 px-4 border-b font-semibold">加算項目</th>
-                <th className="py-3 px-4 border-b font-semibold">1割負担</th>
-                <th className="py-3 px-4 border-b font-semibold">備考</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td className="py-2 px-4 border-b">初期加算</td><td className="py-2 px-4 border-b">30円</td><td className="py-2 px-4 border-b text-left">ご入居日から30日間のみ</td></tr>
-              <tr><td className="py-2 px-4 border-b">医療連携体制加算(I)ハ</td><td className="py-2 px-4 border-b">37円</td><td className="py-2 px-4 border-b"></td></tr>
-              <tr><td className="py-2 px-4 border-b">サービス提供体制強化加算(I)</td><td className="py-2 px-4 border-b">22円</td><td className="py-2 px-4 border-b"></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p className="text-sm text-gray-600 mt-2">※この他に、1ヶ月の介護サービス費合計に対して<strong>18.6%</strong>の「介護職員処遇改善加算(I)」が加わります。</p>
-
+        </motion.div>
 
         <h3 className="text-lg font-medium mt-8 mb-3 text-gray-700">(2) その他の費用（実費負担・1日あたり）</h3>
         <div className="overflow-x-auto shadow-md rounded-lg">

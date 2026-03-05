@@ -1,37 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { motion } from "framer-motion";
-import Modal from 'react-modal';
-import { ToastContainer, toast } from 'react-toastify';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-import 'react-toastify/dist/ReactToastify.css';
+import OceanPage from "../components/OceanPage.jsx";
 
-// モーダルのルート要素を設定
-Modal.setAppElement('#root');
+// SwiperなどのCSSはApp.jsx等で一括読み込みされている前提です
 
 const Home = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
-
-  // 画像をクリックしたときのハンドラー
-  const handleImageClick = (imageSrc) => {
-    setSelectedImage(imageSrc);
-    setModalIsOpen(true);
-  };
-
-  // お問い合わせボタンクリック時のハンドラー
-  const handleContactClick = () => {
-    toast.info("お電話、もしくはお問い合わせフォームからのお問い合わせをお待ちしております！", {
-      position: "bottom-right",
-      autoClose: 3000,
-    });
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -162,72 +138,41 @@ const Home = () => {
         </Link>
       </div>
 
-      {/* お問い合わせ */}
-      <div className="max-w-2xl mx-auto px-4">
-        <Link to="/Contact" onClick={() => window.scrollTo(0, 0)}>
-          <motion.section
-            whileHover={{ scale: 1.02 }}
-            className="bg-gray-50 p-6 rounded shadow cursor-pointer"
-          >
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-lg font-bold mb-4">お問合わせ</h2>
-              <img src="/images/caremanager.png" alt="施設" className="mx-auto mb-4 h-24 w-auto" />
-              <p className="cursor-pointer" onClick={(e) => {
-                e.preventDefault();
-                handleContactClick();
-              }}>0234-28-8585 10:00~17:00</p>
-              <p className="text-blue-600 underline hover:text-blue-800">お問い合わせフォームへ</p>
-            </div>
-          </motion.section>
-        </Link>
-      </div>
+            <motion.section 
+              whileHover={{ y: -10 }}
+              className="rounded-[2.5rem] bg-#082f49 p-10 sm:p-16 shadow-2xl flex flex-col justify-center"
+            >
+              <h2 className="text-3xl sm:text-4xl font-black mb-6 text-sky-950 tracking-tighter">事業目的</h2>
+              <p className="text-slate-600 leading-loose text-base sm:text-xl font-bold">
+                認知症によって自立した生活が困難になった利用者に対して、安心と尊厳のある生活を営めるよう支援することを目的としています。
+              </p>
+            </motion.section>
+          </div>
 
-      {/* モーダル */}
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        style={{
-          overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.75)'
-          },
-          content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            padding: '20px',
-            width: '90%',
-            maxWidth: '800px',
-            maxHeight: '90vh',
-          }
-        }}
-        contentLabel="Image Modal"
-      >
-        <div style={{ width: '100%' }}>
-          <img 
-            src={selectedImage} 
-            alt="拡大画像" 
-            style={{ 
-              width: '100%',
-              height: 'auto',
-              maxHeight: '70vh',
-              objectFit: 'contain'
-            }} 
-          />
-          <button
-            onClick={() => setModalIsOpen(false)}
-            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
-            閉じる
-          </button>
+          {/* 事業所紹介：ダークグラスデザイン */}
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl sm:text-5xl font-black text-white mb-10 sm:mb-16 tracking-tighter">事業所紹介</h2>
+            <Link to="/facility/day-service">
+              <motion.div 
+                whileHover={{ scale: 1.01 }}
+                className="group bg-sky-900/30 backdrop-blur-md rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl overflow-hidden border border-white/10 cursor-pointer"
+              >
+                <div className="flex flex-col lg:flex-row">
+                  <div className="h-64 sm:h-[450px] lg:w-3/5 overflow-hidden">
+                    <img src="/images/facility-003.jpg" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="facility" />
+                  </div>
+                  <div className="p-10 sm:p-16 lg:w-2/5 flex flex-col justify-center">
+                    <h3 className="text-3xl sm:text-4xl font-black mb-6 text-white tracking-tight">グループホームねずがせき</h3>
+                    <p className="text-sky-100/70 mb-10 text-base sm:text-xl leading-relaxed">24時間体制で、利用者様の安定した生活と望む暮らしを実現いたします。</p>
+                    <div className="text-sky-400 font-black tracking-[0.2em] text-sm uppercase">VIEW DETAILS →</div>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          </div>
         </div>
-      </Modal>
-
-      {/* Toast通知のコンテナ */}
-      <ToastContainer />
-    </motion.div>
+      </OceanPage>
+    </div>
   );
 };
 

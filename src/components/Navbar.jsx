@@ -12,15 +12,17 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-800 text-white p-4">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">ケアサービスつきみ</Link>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-sky-950 text-white shadow-lg">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          <Link to="/" className="text-xl font-bold tracking-widest hover:text-sky-200 transition-colors">
+            ケアサービスつきみ
+          </Link>
           
           {/* ハンバーガーメニューボタン */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
             aria-label="メニュー"
           >
             <svg
@@ -41,12 +43,12 @@ const Navbar = () => {
           </button>
 
           {/* デスクトップメニュー */}
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex space-x-8">
             {navigation.map((item) => (
               <li key={item.name}>
                 <Link
                   to={item.href}
-                  className="hover:text-blue-200 transition-colors"
+                  className="text-sm font-medium tracking-wider text-sky-50/90 hover:text-white hover:underline decoration-sky-400 underline-offset-4 transition-all"
                 >
                   {item.name}
                 </Link>
@@ -57,15 +59,15 @@ const Navbar = () => {
 
         {/* モバイルメニュー */}
         <div
-          className={`md:hidden ${
-            isOpen ? 'block' : 'hidden'
-          } mt-4 space-y-2`}
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            isOpen ? 'max-h-64 pb-4' : 'max-h-0'
+          }`}
         >
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className="block py-2 hover:text-blue-200 transition-colors"
+              className="block rounded-xl px-4 py-3 text-base font-medium text-sky-50/90 hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               {item.name}
