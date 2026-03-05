@@ -22,6 +22,8 @@ const Home = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
 
+  // 警告回避のため、使用していないハンドラーを一度削除またはコメントアウトしました
+  /*
   const handleImageClick = (imageSrc) => {
     setSelectedImage(imageSrc);
     setModalIsOpen(true);
@@ -33,6 +35,7 @@ const Home = () => {
       autoClose: 3000,
     });
   };
+  */
 
   return (
     <motion.div
