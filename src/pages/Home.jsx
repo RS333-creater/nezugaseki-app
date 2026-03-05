@@ -153,10 +153,10 @@ const Home = () => {
             className="bg-blue-100 p-6 rounded shadow cursor-pointer"
           >
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-lg font-bold mb-4">ご利用案内</h2>
+              <h2 className="text-lg font-bold mb-4">ご利用料金案内</h2>
               <img src="/images/介護施設.png" alt="施設" className="mx-auto mb-4 h-24 w-auto" />
-              <p className="mb-4">ご相談からご利用までの流れ</p>
-              <p className="text-blue-700 underline hover:text-blue-900">ご利用方法について</p>
+              <p className="mb-4"></p>
+              <p className="text-blue-700 underline hover:text-blue-900">ご利用料金について</p>
             </div>
           </motion.section>
         </Link>
