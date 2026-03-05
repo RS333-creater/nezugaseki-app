@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { motion } from "framer-motion";
 import Modal from 'react-modal';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify'; // toast を削除
 
 // スタイルのインポート
 import 'swiper/css';
@@ -20,22 +20,7 @@ if (typeof window !== 'undefined' && document.getElementById('root')) {
 
 const Home = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
-
-  // 警告回避のため、使用していないハンドラーを一度削除またはコメントアウトしました
-  /*
-  const handleImageClick = (imageSrc) => {
-    setSelectedImage(imageSrc);
-    setModalIsOpen(true);
-  };
-
-  const handleContactClick = () => {
-    toast.info("お電話でのお問い合わせをお待ちしております！", {
-      position: "bottom-right",
-      autoClose: 3000,
-    });
-  };
-  */
+  const [selectedImage] = useState(''); // setSelectedImage を削除
 
   return (
     <motion.div
@@ -114,8 +99,8 @@ const Home = () => {
         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-4xl bg-white p-4 rounded-2xl outline-none"
         overlayClassName="fixed inset-0 bg-black/80 z-[1000]"
       >
-        <div className="relative">
-          <img src={selectedImage} alt="拡大" className="w-full h-auto max-h-[80vh] object-contain rounded-lg" />
+        <div className="relative text-center">
+          <img src={selectedImage} alt="拡大" className="w-full h-auto max-h-[80vh] object-contain rounded-lg mx-auto" />
           <button onClick={() => setModalIsOpen(false)} className="mt-4 w-full py-3 bg-blue-600 text-white font-bold rounded-xl">閉じる</button>
         </div>
       </Modal>
