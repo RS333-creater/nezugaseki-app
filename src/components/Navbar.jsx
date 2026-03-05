@@ -12,10 +12,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-sky-950/75 text-white backdrop-blur ring-1 ring-white/10">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center py-4">
-          <Link to="/" className="text-lg sm:text-xl font-semibold tracking-wide">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-sky-950 text-white shadow-lg">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          <Link to="/" className="text-xl font-bold tracking-widest hover:text-sky-200 transition-colors">
             ケアサービスつきみ
           </Link>
           
@@ -43,12 +43,12 @@ const Navbar = () => {
           </button>
 
           {/* デスクトップメニュー */}
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex space-x-8">
             {navigation.map((item) => (
               <li key={item.name}>
                 <Link
                   to={item.href}
-                  className="text-sm font-medium tracking-wide text-sky-50/90 hover:text-white transition-colors"
+                  className="text-sm font-medium tracking-wider text-sky-50/90 hover:text-white hover:underline decoration-sky-400 underline-offset-4 transition-all"
                 >
                   {item.name}
                 </Link>
@@ -59,15 +59,15 @@ const Navbar = () => {
 
         {/* モバイルメニュー */}
         <div
-          className={`md:hidden ${
-            isOpen ? 'block' : 'hidden'
-          } pb-4 space-y-1`}
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            isOpen ? 'max-h-64 pb-4' : 'max-h-0'
+          }`}
         >
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className="block rounded-xl px-3 py-2 text-sm font-medium tracking-wide text-sky-50/90 hover:text-white hover:bg-white/10 transition-colors"
+              className="block rounded-xl px-4 py-3 text-base font-medium text-sky-50/90 hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               {item.name}

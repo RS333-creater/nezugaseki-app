@@ -1,5 +1,6 @@
 import React from "react";
 import OceanPage from "../components/OceanPage.jsx";
+import { motion } from "framer-motion";
 
 const Pricing = () => {
   return (
@@ -8,110 +9,61 @@ const Pricing = () => {
       title="料金のご案内"
       description="介護サービス費（保険適用）と、その他費用（実費）の組み合わせでご案内します。"
     >
-
-      {/* 料金構成の全体説明 */}
-      <div className="mb-10 rounded-2xl bg-white p-6 sm:p-8 shadow-lg ring-1 ring-sky-100">
-        <h3 className="text-lg sm:text-xl font-semibold tracking-wide text-sky-950">料金の構成について</h3>
-        <p>
-          月々のご利用料金は、主に以下の2つの合計額となります。
-          <ul className="list-disc list-inside mt-3 text-slate-700">
-            <li>
-              <strong>介護サービス費</strong>：介護保険適用分。要介護度や所得に応じた負担割合（1〜3割）で変動します。
-            </li>
-            <li>
-              <strong>その他の費用</strong>：介護保険適用外の費用。家賃や食費など全額自己負担となります。
-            </li>
+      <div className="max-w-6xl mx-auto space-y-16 pb-20">
+        {/* 全体説明：ダークグラス */}
+        <motion.div 
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          className="rounded-[2.5rem] bg-white/10 backdrop-blur-2xl p-8 sm:p-12 border border-white/20 shadow-2xl"
+        >
+          <h3 className="text-2xl font-black text-sky-400 mb-6 uppercase tracking-widest">Structure</h3>
+          <ul className="space-y-6 text-white text-lg font-bold">
+            <li className="flex gap-4"><span className="text-sky-400">01</span> 介護サービス費（1〜3割負担）</li>
+            <li className="flex gap-4"><span className="text-sky-400">02</span> その他の費用（実費：家賃・食費等）</li>
           </ul>
-        </p>
+        </motion.div>
+
+        {/* 料金詳細：白カード */}
+        <section className="rounded-[3rem] bg-#082f50 p-8 sm:p-20 shadow-2xl overflow-hidden">
+          <h2 className="text-3xl font-black mb-10 text-sky-950 border-b-4 border-sky-500 pb-4 inline-block">
+            1. グループホームの料金
+          </h2>
+          
+          <div className="space-y-12">
+            <div>
+              <h4 className="text-xl font-black mb-6 text-slate-800 uppercase tracking-widest">基本料金 (1日)</h4>
+              <div className="overflow-x-auto rounded-3xl border border-slate-100 shadow-sm">
+                <table className="min-w-full text-center">
+                  <thead className="bg-slate-50">
+                    <tr className="text-slate-500 text-xs font-black uppercase">
+                      <th className="py-5 px-4">介護度</th>
+                      <th className="py-5 px-4">1割負担</th>
+                      <th className="py-5 px-4">3割負担</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-bold text-slate-700">
+                    <tr className="border-t border-slate-50"><td>要支援2</td><td>749円</td><td>2,247円</td></tr>
+                    <tr className="border-t border-slate-50 bg-slate-50/30"><td>要介護1</td><td>753円</td><td>2,259円</td></tr>
+                    <tr className="border-t border-slate-50"><td>要介護2</td><td>788円</td><td>2,364円</td></tr>
+                    <tr className="border-t border-slate-50 bg-slate-50/30"><td>要介護3</td><td>812円</td><td>2,464円</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-black mb-6 text-slate-800 uppercase tracking-widest">その他費用</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                {[{t:"家賃", p:"1,000円"}, {t:"食費", p:"1,600円"}, {t:"光熱費", p:"600円"}].map((item, i)=>(
+                  <div key={i} className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <p className="text-xs font-black text-slate-400 mb-2 uppercase">{item.t}</p>
+                    <p className="text-2xl font-black text-sky-700">{item.p}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-
-      {/* --- グループホーム --- */}
-      <section className="mb-12 rounded-2xl bg-white p-6 sm:p-8 shadow-lg ring-1 ring-slate-100">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 pb-2 border-b border-slate-200 text-sky-950 tracking-wide">
-          1. グループホームの料金
-        </h2>
-        <p className="mb-6 text-slate-700">
-          認知症の診断を受けた方が、家庭的な環境で共同生活を送るサービスです。料金は日額計算となり、1ヶ月分をまとめてお支払いいただきます。
-        </p>
-
-        <h3 className="text-lg font-medium mb-3 text-slate-800">(1) 介護サービス費（1日あたり）</h3>
-        
-        {/* 基本料金テーブル */}
-        <h4 className="font-semibold mb-2 text-slate-700">【基本料金】</h4>
-        <div className="overflow-x-auto shadow-md rounded-xl mb-6 ring-1 ring-slate-200">
-          <table className="min-w-full bg-white text-center">
-            <thead className="bg-slate-50">
-              <tr>
-                <th className="py-3 px-4 border-b font-semibold">介護度</th>
-                <th className="py-3 px-4 border-b font-semibold">1割負担</th>
-                <th className="py-3 px-4 border-b font-semibold">2割負担</th>
-                <th className="py-3 px-4 border-b font-semibold">3割負担</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td className="py-2 px-4 border-b">要支援2</td><td className="py-2 px-4 border-b">749円</td><td className="py-2 px-4 border-b">1,498円</td><td className="py-2 px-4 border-b">2,247円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護1</td><td className="py-2 px-4 border-b">753円</td><td className="py-2 px-4 border-b">1,506円</td><td className="py-2 px-4 border-b">2,259円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護2</td><td className="py-2 px-4 border-b">788円</td><td className="py-2 px-4 border-b">1,576円</td><td className="py-2 px-4 border-b">2,364円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護3</td><td className="py-2 px-4 border-b">812円</td><td className="py-2 px-4 border-b">1,624円</td><td className="py-2 px-4 border-b">2,464円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護4</td><td className="py-2 px-4 border-b">828円</td><td className="py-2 px-4 border-b">1,656円</td><td className="py-2 px-4 border-b">2,484円</td></tr>
-              <tr><td className="py-2 px-4 border-b">要介護5</td><td className="py-2 px-4 border-b">845円</td><td className="py-2 px-4 border-b">1,690円</td><td className="py-2 px-4 border-b">2,535円</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        {/* 加算料金テーブル */}
-        <h4 className="font-semibold mb-2 text-slate-700">【主な加算料金】</h4>
-        <div className="overflow-x-auto shadow-md rounded-xl ring-1 ring-slate-200">
-          <table className="min-w-full bg-white text-center">
-             <thead className="bg-slate-50">
-              <tr>
-                <th className="py-3 px-4 border-b font-semibold">加算項目</th>
-                <th className="py-3 px-4 border-b font-semibold">1割負担</th>
-                <th className="py-3 px-4 border-b font-semibold">備考</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td className="py-2 px-4 border-b">初期加算</td><td className="py-2 px-4 border-b">30円</td><td className="py-2 px-4 border-b text-left">ご入居日から30日間のみ</td></tr>
-              <tr><td className="py-2 px-4 border-b">医療連携体制加算(I)ハ</td><td className="py-2 px-4 border-b">37円</td><td className="py-2 px-4 border-b"></td></tr>
-              <tr><td className="py-2 px-4 border-b">サービス提供体制強化加算(I)</td><td className="py-2 px-4 border-b">22円</td><td className="py-2 px-4 border-b"></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p className="text-sm text-slate-600 mt-3">※この他に、1ヶ月の介護サービス費合計に対して<strong>18.6%</strong>の「介護職員処遇改善加算(I)」が加わります。</p>
-
-
-        <h3 className="text-lg font-medium mt-8 mb-3 text-slate-800">(2) その他の費用（実費負担・1日あたり）</h3>
-        <div className="overflow-x-auto shadow-md rounded-xl ring-1 ring-slate-200">
-          <table className="min-w-full bg-white">
-            <thead className="bg-slate-50">
-              <tr>
-                <th className="py-3 px-4 border-b font-semibold text-left">項目</th>
-                <th className="py-3 px-4 border-b font-semibold text-right">料金</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td className="py-2 px-4 border-b">家賃（管理費）</td><td className="py-2 px-4 border-b text-right">1,000円</td></tr>
-              <tr><td className="py-2 px-4 border-b">食材料費</td><td className="py-2 px-4 border-b text-right">1,600円</td></tr>
-              <tr><td className="py-2 px-4 border-b">水道光熱費</td><td className="py-2 px-4 border-b text-right">600円</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* --- お支払いについて --- */}
-      <section className="rounded-2xl bg-white p-6 sm:p-8 shadow-lg ring-1 ring-slate-100">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 pb-2 border-b border-slate-200 text-sky-950 tracking-wide">
-          お支払いについて
-        </h2>
-        <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li>毎月10日までに、前月分のご利用料金の請求書をお渡しいたします。</li>
-          <li>お支払いは、原則として口座振替でお願いしております。</li>
-          <li>やむを得ず現金でお支払いされる場合は、翌月末までにお願いいたします。</li>
-        </ul>
-        <div className="mt-6 rounded-2xl bg-sky-50 p-4 sm:p-5 text-slate-700 ring-1 ring-sky-100">
-          <p><strong>ご注意：</strong>上記料金は、資料記載時点のものです。介護保険法の改定などにより、料金が変更になる場合がございます。詳細な料金は、ご利用者様のケアプランに基づき個別にご提示いたしますので、お気軽にお問い合わせください。</p>
-        </div>
-      </section>
     </OceanPage>
   );
 };

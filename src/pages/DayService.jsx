@@ -12,127 +12,59 @@ const DayService = () => {
     <OceanPage
       badge="海辺の空気感を大切にした、落ち着けるデイサービス"
       title="デイサービス"
-      description={
-        <>
-          自然の光と、穏やかな時間。<br />
-          その日の体調やご希望に寄り添いながら、安心して過ごせる一日をお手伝いします。
-        </>
-      }
+      description="自然の光と、穏やかな時間。その日の体調やご希望に寄り添いながら、安心して過ごせる一日をお手伝いします。"
     >
-      {/* スライドショー（Swiperを使用） */}
-      <div className="w-full max-w-5xl mx-auto swiper-container-responsive">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation={true}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-          }}
-          className="h-[520px] sm:h-[550px]"
-        >
-          <SwiperSlide>
-            <img
-              src="/images/facility-010.jpg"
-              alt="施設の様子"
-              className="rounded-2xl w-full h-full object-cover shadow-xl ring-1 ring-slate-200"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="/images/gaikan-2.jpg"
-              alt="外観"
-              className="rounded-2xl w-full h-full object-cover shadow-xl ring-1 ring-slate-200"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="/images/facility-003.jpg"
-              alt="施設の外観"
-              className="rounded-2xl w-full h-full object-cover shadow-xl ring-1 ring-slate-200"
-            />
-          </SwiperSlide>
-        </Swiper>
-      </div>
-
-      {/* 施設紹介文 */}
-      <div className="max-w-3xl mx-auto">
-        <motion.section
-          whileHover={{ scale: 1.02 }}
-          className="rounded-2xl bg-gradient-to-br from-white to-sky-50 p-6 sm:p-8 shadow-lg ring-1 ring-sky-100"
-        >
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-xl sm:text-2xl font-semibold tracking-wide text-sky-950">
-              海と山に囲まれた、やさしい時間
-            </h2>
-            <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-700">
-              鼠ヶ関という雄大な山々と日本海という自然に囲まれた環境で、リラックスできる空間を提供しています。<br />
-              利用者様一人一人に寄り添い、安定した生活と本人の望む生活を実現できるように
-              <span className="font-semibold text-sky-700">24時間体制</span>で支えます。
-            </p>
-          </div>
-        </motion.section>
-      </div>
-
-      {/* イベントスライド */}
-      <div className="max-w-[1100px] mx-auto">
-        <div className="text-center mb-6">
-          <h2 className="text-xl sm:text-2xl font-semibold tracking-wide text-sky-950">
-            イベント
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600">
-            季節の行事や制作を通じて、交流と楽しみを大切にしています。
-          </p>
+      <div className="space-y-24">
+        {/* メインビジュアル */}
+        <div className="w-full max-w-6xl mx-auto">
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            spaceBetween={20}
+            autoplay={{ delay: 4000 }}
+            className="h-[300px] sm:h-[600px] rounded-[3rem] shadow-2xl border border-white/10"
+          >
+            {["/images/facility-010.jpg", "/images/gaikan-2.jpg", "/images/facility-003.jpg"].map((src, i) => (
+              <SwiperSlide key={i}><img src={src} className="w-full h-full object-cover" alt="facility" /></SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation={true}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-          }}
-          className="h-[520px] sm:h-[550px]"
-        >
-          <SwiperSlide>
-            <img 
-              src="/images/grouphome-024.jpg" 
-              alt="event1" 
-              className="rounded-2xl w-full h-full object-cover shadow-xl ring-1 ring-slate-200"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img 
-              src="/images/grouphome-033.jpg" 
-              alt="event2" 
-              className="rounded-2xl w-full h-full object-cover shadow-xl ring-1 ring-slate-200"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img 
-              src="/images/grouphome-002.jpg" 
-              alt="event3" 
-              className="rounded-2xl w-full h-full object-cover shadow-xl ring-1 ring-slate-200"
-            />
-          </SwiperSlide>
-        </Swiper>
+
+        {/* 紹介文：グラスモフィズム */}
         <motion.section
-          whileHover={{ scale: 1.02 }}
-          className="mt-6 rounded-2xl bg-white p-6 sm:p-8 shadow-lg ring-1 ring-slate-100"
+          whileHover={{ y: -10 }}
+          className="max-w-4xl mx-auto rounded-[3rem] bg-white/5 backdrop-blur-2xl p-10 sm:p-20 shadow-2xl border border-white/10 text-center"
         >
-          <div className="text-center max-w-2xl mx-auto">
-            <p className="text-base sm:text-lg leading-relaxed text-slate-700">
-              月に一度のペースで様々なイベントを行っており、利用者様と一緒に私たち従業員も楽しんでおります。<br />
-              また、イベント等で制作した作品や写真を思い出として掲示板に掲示しております。
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tighter text-white mb-8">
+            海と山に囲まれた、<br className="sm:hidden" />やさしい時間
+          </h2>
+          <p className="text-lg sm:text-2xl leading-relaxed text-sky-100/80 font-bold">
+            鼠ヶ関という雄大な山々と日本海という自然に囲まれた環境で、リラックスできる空間を提供しています。
+            一人一人に寄り添い、<span className="text-sky-400 underline decoration-sky-400 underline-offset-8">24時間体制</span>で支えます。
+          </p>
+        </motion.section>
+
+        {/* イベントスライド：カードを反転（白背景）にしてリズムを作る */}
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="text-center">
+            <h2 className="text-4xl font-black text-white tracking-tighter uppercase">Events</h2>
+          </div>
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            className="h-[300px] sm:h-[600px] rounded-[3rem] shadow-2xl"
+          >
+            {["/images/grouphome-024.jpg", "/images/grouphome-033.jpg", "/images/grouphome-002.jpg"].map((src, i) => (
+              <SwiperSlide key={i}><img src={src} className="w-full h-full object-cover" alt="event" /></SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="bg-#082f49 rounded-[2.5rem] p-10 sm:p-16 text-center shadow-2xl border border-white/10">
+            <p className="text-lg sm:text-xl font-bold text-slate-700 leading-loose">
+              月に一度のペースで様々なイベントを行っております。<br />
+              作品や写真は思い出として掲示板に掲示し、利用者様と共に楽しんでいます。
             </p>
           </div>
-        </motion.section>
+        </div>
       </div>
     </OceanPage>
   );

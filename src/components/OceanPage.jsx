@@ -1,91 +1,65 @@
 import { motion } from "framer-motion";
 
+const Bubbles = () => {
+  const bubbleArray = [...Array(20)]; 
+  return (
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {bubbleArray.map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-white/20 shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+          style={{
+            width: Math.random() * 12 + 4 + "px",
+            height: Math.random() * 12 + 4 + "px",
+            left: Math.random() * 100 + "%",
+            bottom: "-5%",
+          }}
+          animate={{
+            y: ["0%", "-120vh"],
+            opacity: [0, 0.4, 0],
+            x: ["0%", (Math.random() - 0.5) * 50 + "%"],
+          }}
+          transition={{
+            duration: Math.random() * 10 + 15,
+            repeat: Infinity,
+            delay: Math.random() * 10,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 const OceanHero = ({ badge, title, description }) => {
   return (
-    <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden">
-      <div className="relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/gaikan-2.jpg)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-sky-950/60 via-sky-900/55 to-slate-950/75" />
+    <section className="relative w-full min-h-[60vh] sm:min-h-[75vh] flex items-center overflow-hidden" style={{ backgroundColor: '#082f49' }}>
+      <div 
+        className="absolute inset-0 bg-cover bg-center scale-110"
+        style={{ backgroundImage: "url(/images/gaikan-2.jpg)" }}
+      />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,47,73,0.9), rgba(12,74,110,0.4), rgba(8,47,73,0.9))' }} />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent, #082f49)' }} />
 
-        <motion.div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-35"
-          style={{
-            backgroundImage:
-              "radial-gradient(900px 500px at 20% 25%, rgba(255,255,255,0.18), transparent 60%), radial-gradient(800px 450px at 75% 60%, rgba(56,189,248,0.16), transparent 60%)"
-          }}
-          animate={{ x: [0, 18, 0], y: [0, -10, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
+      <Bubbles />
 
-        <motion.div
-          aria-hidden="true"
-          className="absolute -bottom-16 left-10 h-28 w-28 rounded-full bg-white/10 blur-[1px]"
-          animate={{ y: [0, -110, 0], x: [0, 12, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          aria-hidden="true"
-          className="absolute -bottom-24 left-1/3 h-16 w-16 rounded-full bg-sky-200/10 blur-[1px]"
-          animate={{ y: [0, -140, 0], x: [0, -10, 0] }}
-          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-        />
-        <motion.div
-          aria-hidden="true"
-          className="absolute -bottom-20 right-20 h-20 w-20 rounded-full bg-white/10 blur-[1px]"
-          animate={{ y: [0, -130, 0], x: [0, -14, 0] }}
-          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-        />
+      <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 pointer-events-none z-20">
+        <motion.svg viewBox="0 0 100 1000" className="h-[200%] w-full opacity-30" animate={{ y: ["0%", "-50%"] }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} preserveAspectRatio="none">
+          <path fill="#ffffff" d="M0,0 C30,150 70,350 30,500 C-10,650 30,850 70,1000 L0,1000 Z" />
+        </motion.svg>
+      </div>
+      <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 pointer-events-none z-20">
+        <motion.svg viewBox="0 0 100 1000" className="h-[200%] w-full opacity-30" animate={{ y: ["-50%", "0%"] }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} preserveAspectRatio="none">
+          <path fill="#ffffff" d="M100,0 C70,150 30,350 70,500 C110,650 70,850 30,1000 L100,1000 Z" />
+        </motion.svg>
+      </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <div className="max-w-3xl">
-            {badge ? (
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs sm:text-sm text-sky-50 tracking-wide ring-1 ring-white/20 backdrop-blur">
-                {badge}
-              </p>
-            ) : null}
-            <h1 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-wide text-white drop-shadow">
-              {title}
-            </h1>
-            {description ? (
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-sky-50/90">
-                {description}
-              </p>
-            ) : null}
-          </div>
-        </div>
-
-        <div className="pointer-events-none absolute -bottom-1 left-0 w-full">
-          <motion.svg
-            aria-hidden="true"
-            viewBox="0 0 1440 120"
-            className="w-[200%] h-20 sm:h-24 opacity-70"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            preserveAspectRatio="none"
-          >
-            <path
-              fill="rgba(255,255,255,0.18)"
-              d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            />
-          </motion.svg>
-          <motion.svg
-            aria-hidden="true"
-            viewBox="0 0 1440 120"
-            className="absolute bottom-0 w-[200%] h-20 sm:h-24 opacity-60"
-            animate={{ x: ["-10%", "-60%"] }}
-            transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
-            preserveAspectRatio="none"
-          >
-            <path
-              fill="rgba(56,189,248,0.16)"
-              d="M0,72L96,74.7C192,77,384,83,576,80C768,77,960,64,1152,58.7C1344,53,1536,53,1632,53.3L1728,53L1728,120L1632,120C1536,120,1344,120,1152,120C960,120,768,120,576,120C384,120,192,120,96,120L0,120Z"
-            />
-          </motion.svg>
-        </div>
+      <div className="relative mx-auto max-w-6xl px-8 sm:px-24 py-20 text-white">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+          {badge && <span className="inline-block px-4 py-1.5 mb-8 text-xs font-black tracking-widest bg-white/10 backdrop-blur-xl rounded-full border border-white/20 uppercase">{badge}</span>}
+          <h1 className="text-4xl sm:text-8xl font-black tracking-tighter leading-tight mb-8 drop-shadow-2xl">{title}</h1>
+          {description && <p className="text-lg sm:text-2xl font-bold text-sky-50 leading-relaxed max-w-2xl drop-shadow-md">{description}</p>}
+        </motion.div>
       </div>
     </section>
   );
@@ -93,15 +67,14 @@ const OceanHero = ({ badge, title, description }) => {
 
 const OceanPage = ({ badge, title, description, children }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="relative overflow-x-hidden py-8 space-y-12 text-slate-900"
-    >
+    <div className="relative min-h-screen overflow-x-hidden" style={{ backgroundColor: '#082f49' }}>
+      <div className="fixed inset-0 z-0" style={{ background: 'linear-gradient(to bottom, #0c4a6e, #082f49, #020617)' }} />
       <OceanHero badge={badge} title={title} description={description} />
-      <div className="container space-y-12 pb-10 sm:pb-14">{children}</div>
-    </motion.div>
+      <Bubbles />
+      <main className="container mx-auto px-4 sm:px-28 py-12 sm:py-24 relative z-10">
+        {children}
+      </main>
+    </div>
   );
 };
 
