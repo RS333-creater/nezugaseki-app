@@ -7,11 +7,11 @@ body {
   font-family: "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", MS PGothic, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-gray-50;
+  @apply bg-gray-50 overflow-x-hidden;
 }
 
 #root {
-  @apply min-h-screen flex flex-col;
+  @apply min-h-screen flex flex-col overflow-x-hidden;
 }
 
 .container {
