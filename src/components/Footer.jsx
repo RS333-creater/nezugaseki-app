@@ -36,25 +36,11 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">サイトマップ</h3>
             <ul className="space-y-2">
               <li><Link to="/" onClick={scrollToTop}>ホーム</Link></li>
-              <li><Link to="/facility/multifunction" onClick={scrollToTop}>多機能ホーム</Link></li>
               <li><Link to="/facility/day-service" onClick={scrollToTop}>デイサービス</Link></li>
               <li><Link to="/pricing" onClick={scrollToTop}>料金案内</Link></li>
               <li><Link to="/access" onClick={scrollToTop}>アクセス</Link></li>
               <li><Link to="/contact" onClick={scrollToTop}>お問い合わせ</Link></li>
             </ul>
-          </div>
-
-          {/* SNSリンク */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">SNS</h3>
-            <div className="flex space-x-4">
-              <a href="https://twitter.com/careserviceTUKIMI" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-                Twitter
-              </a>
-              <a href="https://www.instagram.com/careserviceTUKIMI" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
-                Instagram
-              </a>
-            </div>
           </div>
         </div>
 

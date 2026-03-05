@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const navigation = [
-  { name: '多機能ホーム', href: '/facility/multifunction' },
   { name: 'デイサービス', href: '/facility/day-service' },
   { name: '料金案内', href: '/pricing' },
   { name: 'アクセス', href: '/access' },

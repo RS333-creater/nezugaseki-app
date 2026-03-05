@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Multifunction from "./pages/Multifunction.jsx";
 import DayService from "./pages/DayService.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Access from "./pages/Access.jsx";
@@ -16,7 +15,6 @@ function App() {
         <main className="container mx-auto px-4 flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/facility/multifunction" element={<Multifunction />} />
             <Route path="/facility/day-service" element={<DayService />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/access" element={<Access />} />
