@@ -12,43 +12,44 @@ const DayService = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="container py-6 space-y-12"
+      className="container mx-auto py-6 space-y-12 overflow-hidden"
     >
-      {/* スライドショー（Swiperを使用） */}
-      <div className="w-full max-w-5xl mx-auto swiper-container-responsive">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation={true}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-          }}
-          className="h-[550px]"
-          // style={{ width: '1100px', height: '550px' }}
-        >
+      {/* スライドショー：固定幅を削除しレスポンシブ化 */}
+      <div className="w-full max-w-5xl mx-auto px-4">
+            <Swiper
+              modules={[Autoplay, Pagination, Navigation]}
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation={true}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 3000 }}
+              // styleで直接アスペクト比と幅を指定し、CSSファイルの干渉を防ぐ
+              style={{ 
+                width: '100%', 
+                aspectRatio: '16 / 9', 
+                height: 'auto' 
+              }}
+              className="rounded-lg shadow-lg"
+            > 
           <SwiperSlide>
             <img 
               src="/images/facility-010.jpg" 
               alt="slide1" 
-              className="rounded-lg w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img 
               src="/images/gaikan-2.jpg" 
               alt="slide2" 
-              className="rounded-lg w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img 
               src="/images/facility-003.jpg" 
               alt="slide3" 
-              className="rounded-lg w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </SwiperSlide>
         </Swiper>
@@ -60,63 +61,62 @@ const DayService = () => {
           whileHover={{ scale: 1.02 }}
           className="bg-blue-50 p-6 rounded shadow"
         >
-          <div className="text-center max-w-2xl mx-auto">
-            <p className="text-lg leading-relaxed">
+          <div className="text-center">
+            <p className="text-base md:text-lg leading-relaxed">
               鼠ヶ関という雄大な山々と日本海という自然に囲まれた環境で、リラックスできる空間を提供しています。<br />
               利用者様一人一人に寄り添い、安定した生活と本人の望む生活を実現できるように
-              <span className="font-semibold text-blue-700">24時間体制</span>で支えます。
+              <span className="font-semibold text-blue-700 ml-1">24時間体制</span>で支えます。
             </p>
           </div>
         </motion.section>
       </div>
 
-      {/* イベントスライド */}
-      <div className="max-w-[1100px] mx-auto px-4">
-        <div className="text-center mb-6">
-          <h2 className="text-xl font-bold text-blue-800">イベント</h2>
-        </div>
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation={true}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-          }}
-          className="h-[550px]"
-          style={{ width: '1100px', height: '550px' }}
-        >
+      {/* イベントスライド：固定幅を削除しレスポンシブ化 */}
+                <div className="w-full max-w-5xl mx-auto px-4">
+            <Swiper
+              modules={[Autoplay, Pagination, Navigation]}
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation={true}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 3000 }}
+              // styleで直接アスペクト比と幅を指定し、CSSファイルの干渉を防ぐ
+              style={{ 
+                width: '100%', 
+                aspectRatio: '16 / 9', 
+                height: 'auto' 
+              }}
+              className="rounded-lg shadow-lg"
+            >
           <SwiperSlide>
             <img 
               src="/images/grouphome-024.jpg" 
               alt="event1" 
-              className="rounded-lg w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img 
-              src="/images/grouphome-033.jpg" 
+              src="/images/facility-037.jpg" 
               alt="event2" 
-              className="rounded-lg w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img 
-              src="/images/grouphome-002.jpg" 
+              src="/images/grouphome-012.jpg" 
               alt="event3" 
-              className="rounded-lg w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </SwiperSlide>
         </Swiper>
+        
         <motion.section
           whileHover={{ scale: 1.02 }}
-          className="bg-white p-6 rounded shadow mt-6"
+          className="bg-white p-6 rounded shadow mt-6 border border-gray-100"
         >
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-lg leading-relaxed">
+            <p className="text-base md:text-lg leading-relaxed">
               月に一度のペースで様々なイベントを行っており、利用者様と一緒に私たち従業員も楽しんでおります。<br />
               また、イベント等で制作した作品や写真を思い出として掲示板に掲示しております。
             </p>
