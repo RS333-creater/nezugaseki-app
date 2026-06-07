@@ -72,7 +72,11 @@ const Pricing = () => {
             <tbody>
               <tr><td className="py-2 px-4 border-b">初期加算</td><td className="py-2 px-4 border-b">30円</td><td className="py-2 px-4 border-b text-left">ご入居日から30日間のみ</td></tr>
               <tr><td className="py-2 px-4 border-b">医療連携体制加算(I)ハ</td><td className="py-2 px-4 border-b">37円</td><td className="py-2 px-4 border-b"></td></tr>
+              <tr><td className="py-2 px-4 border-b">医療連携体制加算(II)</td><td className="py-2 px-4 border-b">5円</td><td className="py-2 px-4 border-b">医療的ケアが必要な場合</td></tr>
+              <tr><td className="py-2 px-4 border-b">認知症ケア加算(I)</td><td className="py-2 px-4 border-b">3円</td><td className="py-2 px-4 border-b">認知症自立度III以上の場合</td></tr>
+              <tr><td className="py-2 px-4 border-b">生産性向上推進体制加算(II)</td><td className="py-2 px-4 border-b">10円</td><td className="py-2 px-4 border-b"></td></tr>
               <tr><td className="py-2 px-4 border-b">サービス提供体制強化加算(I)</td><td className="py-2 px-4 border-b">22円</td><td className="py-2 px-4 border-b"></td></tr>
+              <tr><td className="py-2 px-4 border-b">介護職員等処遇改善加算(I)ロ</td><td className="py-2 px-4 border-b">22.8%</td><td className="py-2 px-4 border-b">1か月の総単位数の22.8%</td></tr>
             </tbody>
           </table>
         </div>
@@ -92,6 +96,7 @@ const Pricing = () => {
               <tr><td className="py-2 px-4 border-b">家賃（管理費）</td><td className="py-2 px-4 border-b text-right">1,000円</td></tr>
               <tr><td className="py-2 px-4 border-b">食材料費</td><td className="py-2 px-4 border-b text-right">1,600円</td></tr>
               <tr><td className="py-2 px-4 border-b">水道光熱費</td><td className="py-2 px-4 border-b text-right">600円</td></tr>
+              <tr><td className="py-2 px-4 border-b">行事費</td><td className="py-2 px-4 border-b text-right">500円</td></tr>
             </tbody>
           </table>
         </div>
