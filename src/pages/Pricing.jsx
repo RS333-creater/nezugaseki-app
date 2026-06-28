@@ -96,7 +96,6 @@ const Pricing = () => {
               <tr><td className="py-2 px-4 border-b">家賃（管理費）</td><td className="py-2 px-4 border-b text-right">1,000円</td></tr>
               <tr><td className="py-2 px-4 border-b">食材料費</td><td className="py-2 px-4 border-b text-right">1,600円</td></tr>
               <tr><td className="py-2 px-4 border-b">水道光熱費</td><td className="py-2 px-4 border-b text-right">600円</td></tr>
-              <tr><td className="py-2 px-4 border-b">行事費</td><td className="py-2 px-4 border-b text-right">500円</td></tr>
             </tbody>
           </table>
         </div>
