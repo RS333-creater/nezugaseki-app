@@ -5,6 +5,7 @@ const navigation = [
   { name: 'デイサービス', href: '/facility/day-service' },
   { name: '料金案内', href: '/pricing' },
   { name: 'アクセス', href: '/access' },
+  { name: '重要事項説明書', href: '/important-information' },
   { name: 'お問い合わせ', href: '/contact' },
 ];
 
@@ -41,7 +42,7 @@ const Navbar = () => {
           </button>
 
           {/* デスクトップメニュー */}
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm lg:text-base">
             {navigation.map((item) => (
               <li key={item.name}>
                 <Link

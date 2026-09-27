@@ -4,6 +4,7 @@ import DayService from "./pages/DayService.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Access from "./pages/Access.jsx";
 import Contact from "./pages/Contact.jsx";
+import ImportantInformation from "./pages/ImportantInformation.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/access" element={<Access />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/important-information" element={<ImportantInformation />} />
           </Routes>
         </main>
         <Footer />
@@ -27,4 +29,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

@@ -36,10 +36,10 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">サイトマップ</h3>
             <ul className="space-y-2">
               <li><Link to="/" onClick={scrollToTop}>ホーム</Link></li>
-              <li><Link to="/facility/multifunction" onClick={scrollToTop}>多機能ホーム</Link></li>
               <li><Link to="/facility/day-service" onClick={scrollToTop}>デイサービス</Link></li>
               <li><Link to="/pricing" onClick={scrollToTop}>料金案内</Link></li>
               <li><Link to="/access" onClick={scrollToTop}>アクセス</Link></li>
+              <li><Link to="/important-information" onClick={scrollToTop}>重要事項説明書</Link></li>
               <li><Link to="/contact" onClick={scrollToTop}>お問い合わせ</Link></li>
             </ul>
           </div>
@@ -53,4 +53,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
