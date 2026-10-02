@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const navigation = [
-  { name: 'デイサービス', href: '/facility/day-service' },
+  { name: '認知症対応型共同生活介護', href: '/facility/day-service' },
   { name: '料金案内', href: '/pricing' },
   { name: 'アクセス', href: '/access' },
   { name: '重要事項説明書', href: '/important-information' },
